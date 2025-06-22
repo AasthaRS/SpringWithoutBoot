@@ -1,0 +1,25 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="dev" class="org.gupta.aastha.Dev">
+        <property name="age" value="12"/>                  <!--setter injection-->
+    </bean>
+
+    <bean id="dev1" class="org.gupta.aastha.Dev">
+        <constructor-arg index="0" value="15"/>                <!--constructor injection-->
+        <constructor-arg index="1" value="25"/>
+    </bean>
+
+
+    <bean id="lap1" class="org.gupta.aastha.Laptop">
+    </bean>
+
+    <bean id="dev2" class="org.gupta.aastha.Dev">
+        <property name="laptopObj" ref="lap1"/>
+    </bean>
+
+    <bean id="dev3" class="org.gupta.aastha.Dev">
+        <constructor-arg ref="lap1"/>
+    </bean>
+
+</beans>
